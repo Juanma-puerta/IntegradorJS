@@ -19,6 +19,16 @@ const handleFilterProductsByCategory = (categoryIn)=>{
     case "Gaseosas":
       const result = products.filter((el)=> el.categories === categoryIn)
       handleRenderList(result);
+    break;
+    case "mayorPrecio":
+      const resultMayorPrecio = products.sort((a,b)=> b.precio - a.precio)
+      handleRenderList(resultMayorPrecio);
+      break;
+    case "menorPrecio":
+      const resultMenorPrecio = products.sort((a,b)=> a.precio - b.precio)
+      handleRenderList(resultMenorPrecio);
+
+      break;
     default:
       break;
   }
